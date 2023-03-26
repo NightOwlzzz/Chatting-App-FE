@@ -1,2 +1,2 @@
 
-# Chaating-App-FE
+# Chatting-App-FE
