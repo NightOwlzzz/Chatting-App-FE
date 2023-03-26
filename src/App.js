@@ -7,7 +7,6 @@ import { useState } from "react";
 function App() {
   const [receiverCreds, setReceiverCreds] = useState()
   const renderChatForm = (creds, response) => {
-    console.log(creds)
     sendMessage(
       creds,
       creds.activeChat,
@@ -52,7 +51,7 @@ function App() {
         projectID="a9a4416e-994a-4bf8-91f2-0d4ace500fdc"
         userName={"Admin"}
         userSecret={"Admin"}
-        renderChatList={() => { return (<div></div>) }}
+        renderChatList={() => { return (<div style={{borderRight:"1px solid",borderColor:"rgb(175, 175, 175)",height: "100%", backgroundColor:"rgb(240, 240, 240)"}}></div>) }}
         renderChatFeed={(chat) => ChatFeed(chat)}
         renderChatSettingsTop={() => { }}
         renderPeopleSettings={() => { }}
