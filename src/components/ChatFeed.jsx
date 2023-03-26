@@ -1,9 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { NewMessageForm } from "react-chat-engine";
 import MyMessage from "./MyMessage";
 import TheirMessage from "./TheirMessage";
 
-function ChatFeed({ chats, activeChat, userName, messages }) {
+function ChatFeed({creds, chats, activeChat, userName, messages },setReceiverCreds) {
+  
+  useEffect(()=>{
+    if(creds?.userName==='Receiver'){
+      let newCreds = {...creds, activeChat: activeChat}
+      setReceiverCreds(newCreds)
+    }
+  },[activeChat, creds, setReceiverCreds])
+
   const chat = chats && chats[activeChat];
 
   const renderReadReceipts = (message, isMyMessage) =>
